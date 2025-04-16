@@ -1,48 +1,73 @@
 <template>
   <div>
-    <button class="login-btn" @click="isLoginModalOpen = true">로그인</button>
-    <RouterLink to="/register">회원가입</RouterLink>
-    <RouterLink to="/subscribeList">구독리스트</RouterLink>
-    <RouterLink to="/blockList">차단리스트</RouterLink>
-    <main>
-      <RouterView />
-    </main>
-    <LoginModal :show="isLoginModalOpen" @login="handleLogin" @close="isLoginModalOpen = false" />
+    <TheHeader @open-login="openLoginModal" @logout="handleLogout" class="header" />
+    <RouterView />
+    <LoginModal :show="isLoginModalOpen" @close="isLoginModalOpen = false" @login-success="handleLoginSuccess" />
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { RouterView, RouterLink } from 'vue-router'
-import LoginModal from '@/components/LoginModal.vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import { RouterView, useRouter } from 'vue-router'
+import { useUserStore } from '@/stores/user'
+import TheHeader from '@/components/common/Header.vue'
+import LoginModal from '@/components/member/LoginModal.vue'
 
 const isLoginModalOpen = ref(false)
+const router = useRouter()
+const userStore = useUserStore()
 
-const handleLogin = ({ id, password }) => {
-  console.log('로그인 시도:', id, password)
-  isLoginModalOpen.value = false
+const handleLoginSuccess = async () => {
+  try {
+    const token = userStore.accessToken
+    if (!token) return
+
+    const res = await fetch('http://localhost:8000/user-service/users/me', {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+
+    if (!res.ok) throw new Error('인증 실패')
+
+    const userData = await res.json()
+    userStore.setUser(userData)
+    isLoginModalOpen.value = false
+  } catch (err) {
+    console.error('유저 정보 불러오기 실패:', err)
+    userStore.logout()
+  }
 }
+
+const handleLogout = () => {
+  userStore.logout()
+  router.push('/')
+}
+
+const openLoginModal = () => {
+  isLoginModalOpen.value = true
+}
+
+onMounted(() => {
+  if (userStore.accessToken) handleLoginSuccess()
+  window.addEventListener('open-login-modal', openLoginModal)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('open-login-modal', openLoginModal)
+})
 </script>
 
-<style scoped>
-.login-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: #11875c;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 16px;
-  font-size: 14px;
-  cursor: pointer;
-  z-index: 1100;
-}
-
-body {
+<style>
+html,
+body,
+#app {
   margin: 0;
   padding: 0;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+@media (min-width:1000px) {
+  .header {
+    display: none;
+  }
 }
 </style>

@@ -1,0 +1,115 @@
+/* 공통 레이아웃 */
+.food-register-page {
+    background-color: #fff;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.food-register-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1.5rem 0 1rem;
+    text-align: center;
+}
+
+/* 등록 폼 컨테이너 */
+.food-register-container {
+    background-color: #fef7ed;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 1024px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 공통 라벨 */
+.food-register-label {
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 0.95rem;
+}
+
+/* 입력 그리드 */
+.food-register-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.food-register-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* 입력 필드 */
+.food-register-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* 단위 & 단위 설명 */
+.unit-input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.unit-input-wrapper .unit {
+    position: absolute;
+    right: 1rem;
+    top: 0.75rem;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.unit-input-wrapper .unit-caption {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 0.25rem;
+    text-align: center;
+    width: 100%;
+}
+
+.with-unit {
+    padding-right: 3rem;
+}
+
+/* 버튼 */
+.food-register-button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.primary-button,
+.gray-button {
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+.primary-button {
+    background-color: var(--color-primary);
+}
+
+.gray-button {
+    background-color: #c4c4c4;
+}

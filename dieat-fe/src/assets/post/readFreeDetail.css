@@ -1,0 +1,161 @@
+.post-detail-page-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 32px 16px;
+}
+
+.post-card {
+    background-color: #fff;
+    border: 1px solid #cfded6;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    margin: 0 auto 24px auto;
+    padding: 24px 16px;
+    overflow: hidden;
+}
+
+/* 🧾 제목 */
+.post-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* 👤 작성자, 날짜 등 */
+.post-meta {
+    font-size: 13px;
+    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.meta-item {
+    white-space: nowrap;
+}
+
+/* 🧾 Header 영역 */
+.post-header {
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* 📝 본문 콘텐츠 */
+.post-content-box {
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+/* 🖼 이미지 */
+.post-image {
+    max-width: 240px;
+    max-height: 240px;
+    margin: 0 auto 16px;
+    display: block;
+    border-radius: 4px;
+}
+
+/* 📄 본문 텍스트 */
+.post-text {
+    font-size: 15px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+/* ❤️ 좋아요, 댓글수 */
+.post-interaction {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 16px 0 24px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.post-interaction .like {
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s ease;
+}
+
+.post-interaction .liked {
+    color: var(--color-primary);
+}
+
+.comment-count {
+    color: #666;
+}
+
+/* 💬 댓글 입력 */
+.comment-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 2.5rem;
+}
+
+.comment-textarea {
+    width: 100%;
+    min-height: 90px;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+
+.submit-button {
+    align-self: flex-end;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.4rem 0.9rem;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* 🗒 댓글 리스트 */
+.comment-list-wrapper {
+    margin-top: 1.5rem;
+}
+
+.comment-list-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comment-item {
+    padding: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    margin-bottom: 0.9rem;
+    background-color: #fafafa;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.comment-content {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}

@@ -1,0 +1,41 @@
+:root {
+    --color-primary: #189b71;
+    --color-accent: #f85230;
+    --color-background: #fff8ed;
+    --color-header-bg: #155B45;
+    --max-width: 1440px;
+}
+
+/* 기본 설정 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pretendard', sans-serif;
+    color: #333;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.app-wrapper {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 공통 레이아웃 */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+h2 {
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+}

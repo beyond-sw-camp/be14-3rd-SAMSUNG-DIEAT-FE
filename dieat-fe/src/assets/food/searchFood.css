@@ -1,0 +1,287 @@
+/* FoodSearchPage */
+.food-search-page {
+    background-color: #fff;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1024px;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.search-result {
+    flex: 3;
+    background-color: var(--color-background);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.basket-panel {
+    flex: 1;
+    background-color: var(--color-background);
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.complete-button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    margin-top: auto;
+    cursor: pointer;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.no-data {
+    text-align: center;
+    color: var(--color-accent);
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* BasketPanel */
+.basket-panel-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.basket-item {
+    position: relative;
+    background-color: #ffeee0;
+    border-radius: 0.8rem;
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove-button {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100%;
+}
+
+.item-name {
+    flex: 2;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-qty-input {
+    flex: 1;
+    background-color: #dddddd;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.8rem;
+    font-size: 0.95rem;
+    text-align: right;
+    appearance: textfield;
+    min-width: 50px;
+    max-width: 80px;
+}
+
+.item-qty-input::-webkit-outer-spin-button,
+.item-qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* SearchResultList */
+.search-bar-container {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+}
+
+.search-result-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid var(--color-primary);
+    border-radius: 1rem;
+    width: 100%;
+    max-height: 180px;
+    overflow-y: auto;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+}
+
+.result-count {
+    margin-bottom: 0.6rem;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: var(--color-header-bg);
+}
+
+.search-item {
+    padding: 0.4rem 0.8rem;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.search-item:last-child {
+    border-bottom: none;
+}
+
+.search-item:hover {
+    background-color: #f2f2f2;
+}
+
+.verified {
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    margin-left: 0.3rem;
+}
+
+/* SearchBar */
+.search-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--color-background);
+    border: 2px solid var(--color-primary);
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+    width: 100%;
+    max-width: 480px;
+    margin: 1.2rem 0 0.5rem;
+}
+
+.search-section input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.95rem;
+}
+
+.icon-button {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    margin-left: 0.4rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* FoodTable */
+.food-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+    letter-spacing: -0.3px;
+    word-break: keep-all;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: fixed;
+}
+
+.food-table th {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 10px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.8rem;
+}
+
+.food-table td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid rgba(24, 155, 113, 0.2);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.75rem;
+}
+
+.food-table .wide {
+    width: 120px;
+}
+
+.clickable-row {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.clickable-row:hover {
+    background-color: #f5fffa;
+}
+
+/* 🔥 드롭다운 위치를 ☰ 기준으로 바로 아래 */
+.dropdown-wrapper {
+    position: relative;
+}
+
+.filter-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background-color: #fff;
+    border: 1px solid var(--color-primary);
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+    font-size: 0.9rem;
+    width: 120px;
+}
+
+.filter-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-dropdown li {
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+
+.filter-dropdown li:hover {
+    background-color: #f2f2f2;
+}

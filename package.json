@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "chartjs-plugin-datalabels": "^2.2.0",
+    "dayjs": "^1.11.13",
+    "pinia": "^3.0.2",
+    "swiper": "^11.2.6"
+  }
+}

@@ -5,11 +5,11 @@ import SubscribeList from '@/components/subscribe/SubscribeList.vue';
 import BlockUserList from '@/components/block/BlockUserList.vue';
 
 
-const router =createRouter({
+const router = createRouter({
 
 
     history: createWebHistory(),
-    routes:[
+    routes: [
         {
             path: '/register',
             name: 'Register',
@@ -21,7 +21,7 @@ const router =createRouter({
             component: SubscribeList
         },
         {
-            path:'/blockList',
+            path: '/blockList',
             name: 'Block',
             component: BlockUserList
         }
@@ -31,8 +31,8 @@ const router =createRouter({
     ]
 
 
-    }); 
-  
+});
+
 
 
 
